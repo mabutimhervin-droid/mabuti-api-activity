@@ -32,3 +32,13 @@
 
 **4. Testing:**
 - (Paste a screenshot of a successful GET request here)
+
+
+**Hands-on Activity3**
+
+- Why did I choose to Embed the [Review/Tag/Log]?
+- Answer: 
+Embed stores and update the data in another file
+- Why did I choose to Reference the [Chef/User/Guest]?
+- Answer:
+Connects the 2 files
