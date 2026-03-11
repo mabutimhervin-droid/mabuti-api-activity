@@ -41,4 +41,24 @@
 Embed stores and update the data in another file
 - Why did I choose to Reference the [Chef/User/Guest]?
 - Answer:
+
 Connects the 2 files
+
+**1. Authentication vs Authorization**
+
+**Q:** What is the difference between Authentication and Authorization in our code?
+**A:** Authentication verifies the identity of the user by checking their login credentials such as username and password. Authorization determines what actions the authenticated user is allowed to perform, such as accessing protected routes or specific resources in the API.
+
+---
+
+**2. Security (bcrypt)**
+
+**Q:** Why did we use bcryptjs instead of saving passwords as plain text in MongoDB?
+**A:** We use bcryptjs to hash passwords before storing them in the database. This improves security because even if the database is compromised, the actual passwords cannot be easily read. Hashing protects user credentials by converting them into encrypted strings that are difficult to reverse.
+
+---
+
+**3. JWT Structure**
+
+**Q:** What does the protect middleware do when it receives a JWT from the client?
+**A:** The protect middleware verifies the JWT sent by the client to ensure it is valid and not expired. If the token is valid, the middleware decodes the token, identifies the authenticated user, and allows access to protected routes. If the token is missing or invalid, the request is denied.
