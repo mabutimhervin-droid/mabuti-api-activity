@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const {protect, authorize} = require('../middleware/authMiddleware')
+
 const {
     getAllRooms,
     createRoom,
@@ -10,7 +12,7 @@ const {
 } = require('../controllers/roomController');
 
 router.get('/rooms', getAllRooms);
-router.post('/rooms', createRoom);
+router.post('/rooms', protect, authorize('admin', 'manager'), createRoom);
 router.get('/rooms/:id', getRoomById);
 router.put('/rooms/=id', updateRoom);
 router.delete('/room/:id', deleteRoom);
